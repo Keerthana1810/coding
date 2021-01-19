@@ -1,0 +1,24 @@
+#Next Permutation:
+class Solution:
+    def nextPermutation(self,perm,N):
+        ind=N-2
+        while(ind>=0 and perm[ind]>=perm[ind+1]):
+            ind-=1
+        if(ind<0):
+            i=0
+            j=N-1
+            while(i<j):
+                perm[i],perm[j]=perm[j],perm[i]
+                i+=1
+                j-=1
+            return
+        k=N-1
+        while(perm[k]<=perm[ind]):
+            k-=1
+        perm[ind],perm[k]=perm[k],perm[ind]
+        ind+=1
+        j=N-1
+        while(ind<j):
+            perm[ind],perm[j]=perm[j],perm[ind]
+            ind+=1
+            j-=1
