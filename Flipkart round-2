@@ -1,0 +1,25 @@
+#Wave array:
+class Solution:
+    def converToWave(self,arr,N):
+        arr.sort()
+        for i in range(0,N-1,2):
+            arr[i]=arr[i+1]
+            arr[i+1]=arr[i]
+        return arr
+        
+#Strange Matrix:
+def solve(self, R, C):
+        # code here
+        max=0
+        j=-1
+        for i in range(C):
+            if(self.get(0,i)==1):
+                j=i
+                break
+        if(j==-1):
+            j=C-1
+        for i in range(R):
+            while(j>=0 and self.get(i,j)==1):
+                j-=1
+                max=i
+        return max
