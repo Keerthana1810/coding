@@ -1,0 +1,67 @@
+#Binary Tree Inorder traversal:
+class Solution {
+    public List < Integer > inorderTraversal(TreeNode root) {
+        List < Integer > curr = new ArrayList < > ();
+        helper(root, curr);
+        return curr;
+    }
+
+    public void helper(TreeNode root, List < Integer > curr) {
+        if (root != null) {
+            if (root.left != null) {
+                helper(root.left, curr);
+            }
+            curr.add(root.val);
+            if (root.right != null) {
+                helper(root.right, curr);
+            }
+        }
+    }
+}
+
+#Binary tree Pre order traversal:
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> keer = new ArrayList<>();
+        helper(root,keer);
+        return keer;
+        
+        
+    }
+    public void helper(TreeNode root,List<Integer> keer){
+        if(root!=null){
+            keer.add(root.val);
+            if(root.left!=null){
+                helper(root.left,keer);
+                
+            }
+            if(root.right!=null){
+                helper(root.right,keer);
+            }
+        }
+    }
+}
+#Binary tree Post order traversal:
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> keer = new ArrayList<>();
+        helper(root,keer);
+        return keer;
+        
+        
+    }
+    public void helper(TreeNode root,List<Integer> keer){
+        if(root!=null){
+           
+            if(root.left!=null){
+                helper(root.left,keer);
+                
+            }
+            if(root.right!=null){
+                helper(root.right,keer);
+            }
+             keer.add(root.val);
+        }
+    }
+    #Binary Tree Level order Traversal:
+}
